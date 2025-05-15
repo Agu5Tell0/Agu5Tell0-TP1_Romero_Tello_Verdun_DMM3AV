@@ -63,7 +63,7 @@ function mouseReleased() {
   isDragging = false;
   refreshTimeout = setTimeout(() => {
     resetCanvas();
-  }, 6000);
+  }, 4000);
 }
 
 function mouseDragged() {
