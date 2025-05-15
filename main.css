@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background-color: #2e2e2e;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+/* Contenedor general centrado */
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor interno para header y footer */
+.inner-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  background-color: #000;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-group img {
+  width: 48px;
+  height: 48px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+canvas {
+  display: block;
+  background: #444;
+  border: 1px solid #666;
+  margin: 2rem 0;
+  width: 1300px;
+  height: 731px;
+}
+/* Main content */
+main {
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  width: 100%;
+  color: white;
+  padding: 1.5rem 0;
+  font-size: 1rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
