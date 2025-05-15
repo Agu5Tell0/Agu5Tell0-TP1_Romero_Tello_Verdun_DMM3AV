@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo UTV</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+    <video autoplay muted loop playsinline id="background-video">
+  <source src="videos/stars.mp4" type="video/mp4" />
+  Tu navegador no soporta video HTML5.
+</video>
+  
+  <header>
+    <div class="inner-container">
+      <div class="logo-group">
+        <img src="img/logo.svg" alt="Logo Grupo UTV">
+        <h1>Lienzo Desconocido</h1>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div id="canvas-container"></div>
+
+    <main>
+      <section>
+        <h2>Explicación</h2>
+        <p>
+En este proyecto desarrollamos una landing page experimental pensada exclusivamente para escritorio, cuyo objetivo principal es permitir al usuario interactuar con dos imágenes superpuestas mediante el cursor. Utilizamos <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong> con la biblioteca <strong>p5.js</strong> para lograr un efecto de “revelado” que deja ver la imagen inferior al pintar con el mouse. Además, incorporamos un <strong>&lt;video&gt;</strong> de fondo en bucle para aportar una atmósfera visual envolvente.
+<br><br>
+En el <strong>HTML</strong> estructuramos la página con etiquetas semánticas como <strong>&lt;header&gt;</strong>, <strong>&lt;main&gt;</strong> y <strong>&lt;footer&gt;</strong>, e incluimos un contenedor con el <strong>ID "canvas-container"</strong> donde se monta el canvas generado por p5.js. Vinculamos la hoja de estilos externa <strong>style.css</strong>, la fuente <strong>Inter</strong> desde Google Fonts, la librería <strong>p5.js</strong> desde CDN y nuestro script personalizado <strong>main.js</strong>. También colocamos un <strong>&lt;video&gt;</strong> con <strong>position: fixed</strong> y <strong>z-index: -1</strong> para que funcione como fondo sin interferir en la interacción.
+<br><br>
+En el <strong>CSS</strong> nos aseguramos de que el video ocupe toda la pantalla con <strong>object-fit: cover</strong> y de que el <strong>&lt;canvas&gt;</strong> se muestre centrado y a un tamaño fijo (<strong>1300x731px</strong>). Usamos <strong>flexbox</strong> para organizar el contenido y dimos estilos generales como colores, márgenes y tipografía. También definimos la disposición de las imágenes de los integrantes en una grilla flexible.
+<br><br>
+El código <strong>JavaScript</strong> implementa toda la lógica del efecto visual. Primero, en <strong>preload()</strong>, cargamos dos imágenes: una blanca encima y otra negra debajo. En <strong>setup()</strong> creamos el <strong>canvas</strong> e inicializamos un <strong>buffer</strong> donde se almacena la imagen superior. En cada fotograma, <strong>draw()</strong> dibuja ambas capas, y si se activa un reinicio automático, genera una animación circular que vuelve a cubrir progresivamente la imagen inferior.
+<br><br>
+La interacción se maneja con funciones de mouse. Al arrastrar (<strong>mouseDragged()</strong>), se crea un degradado radial con <strong>destination-out</strong>, lo que borra parte del buffer y deja ver lo que hay debajo. Al soltar el mouse (<strong>mouseReleased()</strong>), se activa un temporizador que tras seis segundos reinicia la imagen. Esto se logra con la función <strong>resetCanvas()</strong> que lanza una animación suave de restauración.
+<br><br>
+Con este trabajo buscamos experimentar con el comportamiento del <strong>canvas</strong> en <strong>p5.js</strong>, explorando técnicas de enmascarado y animación que permitan una experiencia visual dinámica y creativa.
+</p>
+
+      </section>
+    </main>
+    <div class="photo-grid">
+  <div class="person">
+    <img src="img/Migue.jpeg" alt="Persona 1">
+    <p>Miguel Agustín Tello</p>
+  </div>
+  <div class="person">
+    <img src="img/Ulises.jpg" alt="Persona 2">
+    <p>Ulises Romero</p>
+  </div>
+  <div class="person">
+    <img src="img/Gonza.jpeg" alt="Persona 3">
+    <p>Gonzalo Verdún</p>
+  </div>
+</div>
+  </div>
+
+  <footer>
+    
+    <div class="inner-container">
+      <p><strong>Materia:</strong> Diseño y Programación Web I</p>
+      <p><strong>Curso:</strong> DMN3AV</p>
+      <p><strong>Turno:</strong> Noche</p>
+      <p><strong>Modalidad:</strong> Virtual</p>
+      <p><strong>Profesor:</strong> Sergio Daniel Medina</p>
+      <p><strong>Alumnos:</strong> Miguel Agustín Tello, Ulises Romero, Gonzalo Verdún</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
